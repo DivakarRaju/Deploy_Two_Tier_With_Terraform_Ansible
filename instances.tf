@@ -9,3 +9,19 @@ data "aws_ssm_parameter" "linuxAmiOregon" {
   provider = aws.region-worker
   name     = "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"
 }
+
+
+
+#Create key-pair for logging into EC2 in us-east-1
+resource "aws_key_pair" "master-key" {
+  provider   = aws.region-master
+  key_name   = "jenkins"
+  public_key = file("~/.ssh/id_rsa_divakarpersonal.pub")
+}
+
+#Create key-pair for logging into EC2 in us-west-2
+resource "aws_key_pair" "worker-key" {
+  provider   = aws.region-worker
+  key_name   = "jenkins"
+  public_key = file("~/.ssh/id_rsa_divakarpersonal.pub")
+}
