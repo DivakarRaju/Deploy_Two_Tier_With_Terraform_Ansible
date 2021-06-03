@@ -1,6 +1,6 @@
 variable "profile" {
   type    = string
-  default = "default"
+  default = "divakarpersonal"
 }
 
 variable "region-master" {
@@ -13,4 +13,4 @@ variable "region-worker" {
   type    = string
   default = "us-west-2"
 
-} 
+}  
