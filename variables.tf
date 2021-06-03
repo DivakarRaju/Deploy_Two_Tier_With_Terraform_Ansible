@@ -20,3 +20,13 @@ variable "external_ip" {
   default = "0.0.0.0/0"
 
 }
+
+variable "workers-count" {
+  type    = number
+  default = 1
+}
+
+variable "instance-type" {
+  type    = string
+  default = "t2.micro"
+}
